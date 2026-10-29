@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gmail Invite Details: Privacy Policy</title>
+<style>
+:root {
+  --paper: #fbfaf7;
+  --ink: #1d1c22;
+  --muted: #6b6a72;
+  --rule: #d9d7d0;
+  --accent: #4b4fb5;
+  --ok: #2f6b3a;
+  --label-bg: #ffffff;
+  --dialog-bg: #ffffff;
+  --dialog-shadow: 0 1px 2px rgba(0,0,0,.08), 0 8px 24px rgba(0,0,0,.10);
+  --flow-box: #f1f0ec;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #17171c; --ink: #ecebf0; --muted: #a3a2ad; --rule: #34333c;
+    --accent: #a9acff; --ok: #7fc58c; --label-bg: #1f1f25; --dialog-bg: #26262d;
+    --dialog-shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.5);
+    --flow-box: #24242b; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #17171c; --ink: #ecebf0; --muted: #a3a2ad; --rule: #34333c;
+  --accent: #a9acff; --ok: #7fc58c; --label-bg: #1f1f25; --dialog-bg: #26262d;
+  --dialog-shadow: 0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.5);
+  --flow-box: #24242b; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+}
+.sheet { max-width: 760px; margin: 0 auto; padding: 40px 16px 64px; }
+@media (max-width: 640px) { .sheet { padding-top: 64px; } }
+.themeswitch {
+  position: absolute; top: 16px; right: 16px;
+  border: 1px solid var(--rule); background: transparent; color: var(--muted);
+  border-radius: 999px; padding: 4px 12px; font: inherit; font-size: 13px; cursor: pointer;
+}
+.byline { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+.byline img { width: 40px; height: 40px; }
+h1 { font-size: 28px; line-height: 1.2; margin: 0; letter-spacing: -0.01em; }
+.effective { color: var(--muted); font-size: 14px; margin: 4px 0 32px; }
+.lede { font-size: 18px; margin: 0 0 36px; }
+a { color: var(--accent); }
+
+/* The two objects at the top: the privacy label and Chrome's install prompt */
+.pair { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; align-items: start; margin-bottom: 40px; }
+@media (max-width: 640px) { .pair { grid-template-columns: 1fr; } }
+
+.factslabel {
+  background: var(--label-bg);
+  border: 2px solid var(--ink);
+  padding: 8px 12px 10px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.factslabel .heading { font-size: 26px; font-weight: 900; line-height: 1.05; margin: 0; }
+.factslabel .for { font-size: 13px; padding-bottom: 6px; border-bottom: 8px solid var(--ink); }
+.factslabel .rowline { display: flex; justify-content: space-between; gap: 12px; padding: 4px 0; border-bottom: 1px solid var(--ink); font-size: 14px; }
+.factslabel .rowline b { font-weight: 800; }
+.factslabel .rowline.thick { border-bottom-width: 4px; }
+.factslabel .amount { font-weight: 800; white-space: nowrap; }
+.factslabel .footnote { font-size: 11px; line-height: 1.4; padding-top: 6px; }
+
+.prompt {
+  background: var(--dialog-bg);
+  border-radius: 12px;
+  box-shadow: var(--dialog-shadow);
+  padding: 20px 20px 16px;
+  font-size: 14px;
+}
+.prompt .asks { display: flex; gap: 12px; align-items: center; font-size: 16px; font-weight: 600; margin-bottom: 12px; }
+.prompt .asks img { width: 32px; height: 32px; }
+.prompt .canlist { margin: 0 0 4px; }
+.prompt ul { margin: 6px 0 14px; padding-left: 20px; }
+.prompt li { margin-bottom: 8px; }
+.prompt .means { display: block; color: var(--muted); font-size: 13px; margin-top: 2px; }
+.prompt .means::before { content: "What this means: "; font-weight: 600; color: var(--ok); }
+.prompt .btnrow { display: flex; justify-content: flex-end; gap: 8px; }
+.prompt .btnrow span { border-radius: 999px; padding: 6px 16px; font-size: 13px; border: 1px solid var(--rule); }
+.prompt .btnrow .primary { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+
+/* Data-flow sketch */
+.flow { margin: 0 0 44px; }
+.flow h2, .terms h2 { font-size: 20px; margin: 0 0 14px; }
+.flowrow { display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; align-items: center; gap: 8px; }
+.station { background: var(--flow-box); border: 1px solid var(--rule); border-radius: 10px; padding: 12px; font-size: 14px; text-align: center; }
+.station b { display: block; font-size: 15px; }
+.arrow { color: var(--muted); font-size: 22px; }
+.nowhere { margin-top: 12px; display: flex; align-items: center; gap: 10px; font-size: 14px; color: var(--muted); }
+.nowhere .cut { text-decoration: line-through; text-decoration-thickness: 2px; }
+@media (max-width: 640px) {
+  .flowrow { grid-template-columns: 1fr; }
+  .arrow { transform: rotate(90deg); justify-self: center; }
+}
+
+/* Plain policy text, numbered like a legal notice */
+.terms ol { padding-left: 22px; margin: 0; }
+.terms li { margin-bottom: 14px; }
+.terms li b { display: block; }
+@media print { .themeswitch { display: none; } body { background: #fff; } }
+</style>
+</head>
+<body>
+<button class="themeswitch" type="button" id="themebtn">Theme</button>
+<main class="sheet">
+  <div class="byline">
+    <img src="data:image/png;base64,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" alt="">
+    <h1>Gmail Invite Details: Privacy Policy</h1>
+  </div>
+  <p class="effective">Effective October 29, 2026</p>
+  <p class="lede">This extension reads the calendar invite inside an email you open in Gmail and shows its meeting details on the page. Everything happens in your browser. It collects nothing, stores nothing and sends nothing anywhere.</p>
+
+  <div class="pair">
+    <section class="factslabel" aria-label="Privacy facts">
+      <p class="heading">Privacy Facts</p>
+      <div class="for">Gmail Invite Details, version 1.0</div>
+      <div class="rowline thick"><b>Data collected</b><span class="amount">None</span></div>
+      <div class="rowline"><span>Personal information</span><span class="amount">0</span></div>
+      <div class="rowline"><span>Email content stored</span><span class="amount">0</span></div>
+      <div class="rowline"><span>Analytics or tracking</span><span class="amount">0</span></div>
+      <div class="rowline"><span>Ads</span><span class="amount">0</span></div>
+      <div class="rowline thick"><span>Servers we run</span><span class="amount">0</span></div>
+      <div class="rowline"><b>Data sold or shared</b><span class="amount">Never</span></div>
+      <div class="footnote">The extension has no backend. Invite details live in your open Gmail tab and disappear when you close it.</div>
+    </section>
+
+    <section class="prompt" aria-label="Chrome permission prompt, explained">
+      <div class="asks"><img src="data:image/png;base64,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" alt="">Add "Gmail Invite Details"?</div>
+      <p class="canlist">It can:</p>
+      <ul>
+        <li>Read and change your data on mail.google.com
+          <span class="means">it reads the open email's calendar invite and adds the details box above the message.</span></li>
+        <li>Read your data on mail-attachment.googleusercontent.com
+          <span class="means">Gmail serves the invite.ics file from this address; the extension downloads it only when it can't read the invite from the email itself.</span></li>
+      </ul>
+      <div class="btnrow"><span>Cancel</span><span class="primary">Add extension</span></div>
+    </section>
+  </div>
+
+  <section class="flow">
+    <h2>Where your email goes</h2>
+    <div class="flowrow">
+      <div class="station"><b>Gmail</b>the email you opened</div>
+      <div class="arrow" aria-hidden="true">&rarr;</div>
+      <div class="station"><b>Your browser</b>the invite is read here</div>
+      <div class="arrow" aria-hidden="true">&rarr;</div>
+      <div class="station"><b>Details box</b>shown on the same page</div>
+    </div>
+    <div class="nowhere"><span class="cut">Developer servers, analytics, third parties</span><span>never reached</span></div>
+  </section>
+
+  <section class="terms">
+    <h2>The policy in full</h2>
+    <ol>
+      <li><b>What the extension accesses.</b> When you open an email in Gmail that contains a calendar invite, the extension reads that email's raw content (the same text Gmail shows under "Show original") or its .ics attachment. It looks only at emails you open, and only for the calendar invite.</li>
+      <li><b>What it does with it.</b> It pulls out the meeting title, join link, meeting ID, passcode and dial-in details and shows them in a box on the Gmail page. Nothing is changed in your mailbox.</li>
+      <li><b>What it stores.</b> Nothing. No email content, invite details or settings are saved to disk, to browser storage or anywhere else.</li>
+      <li><b>What it sends.</b> Nothing leaves your browser. The only network requests are to Gmail's own addresses (mail.google.com and mail-attachment.googleusercontent.com), using your existing signed-in session, to fetch the email you are already viewing.</li>
+      <li><b>Sharing and selling.</b> No data is sold, shared, transferred to third parties, or used for advertising, credit decisions or any purpose other than showing you the meeting details.</li>
+      <li><b>Google API data.</b> Use of information received from Gmail follows the Chrome Web Store User Data Policy, including its Limited Use requirements.</li>
+      <li><b>Copy buttons.</b> When you click Copy, the chosen value is put on your clipboard. The extension never reads your clipboard.</li>
+      <li><b>Changes.</b> If this policy changes, the new version will be posted at this address with a new effective date.</li>
+    </ol>
+  </section>
+</main>
+<script>
+(function () {
+  var root = document.documentElement;
+  var btn = document.getElementById("themebtn");
+  btn.addEventListener("click", function () {
+    var dark = root.getAttribute("data-theme")
+      ? root.getAttribute("data-theme") === "dark"
+      : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    root.setAttribute("data-theme", dark ? "light" : "dark");
+  });
+})();
+</script>
+</body>
+</html>
